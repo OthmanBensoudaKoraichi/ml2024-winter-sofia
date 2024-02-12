@@ -1,4 +1,3 @@
-
 class NumberCollection:
     def __init__(self):
         # Initialize an empty list to store numbers
