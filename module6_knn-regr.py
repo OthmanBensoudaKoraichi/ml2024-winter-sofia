@@ -17,9 +17,9 @@ import module4
 ### Helper functions ###
 
 # Loop to get a positive integer
-def enter_pos_integer():
+def enter_pos_integer(letter):
     while True:
-        N = input("Please enter a positive integer: ")
+        N = input(f"Please enter a positive integer {letter}: ")
         if module4.is_positive_integer(N):
             return int(N)
         else:
@@ -72,15 +72,25 @@ def k_nn_regression(points, v, k, distance_metric="euclidean"):
 
     return avg_y
 
+def input_distance_metric():
+    while True:
+        distance = input("Enter your distance metric. Write 'e' for Euclidean and 'm' for Manhattan: ")
+        if distance == "e":
+            return "euclidean"
+        elif distance == "m":
+            return "manhattan"
+        else:
+            print("Invalid input. Please enter 'e' for Euclidean or 'm' for Manhattan.")
+
 
 
 ### Program ###
 def main():
     # Loop to get a positive integer N
-    N = enter_pos_integer()
+    N = enter_pos_integer("N")
 
     # Loop to get a positive integer k
-    k = enter_pos_integer()
+    k = enter_pos_integer("k")
 
     # Collecting N points
     points = enter_points(N)
@@ -88,8 +98,10 @@ def main():
     # Ask for input X
     x_input = float(input("Enter the value of X: "))
 
+    distance_metric = input_distance_metric()
+
     # Perform k-NN Regression
-    result = k_nn_regression(points, np.array([x_input, 0]), k, distance_metric = "euclidean")
+    result = k_nn_regression(points, np.array([x_input, 0]), k, distance_metric = distance_metric)
 
     return result
 
