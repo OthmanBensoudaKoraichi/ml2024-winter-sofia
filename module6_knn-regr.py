@@ -26,7 +26,6 @@ def enter_pos_integer():
             print("Invalid input. Please enter a positive integer.")
 
 # Function to read N (x, y) points
-# Function to read N (x, y) points
 def enter_points(N):
     points = np.zeros((N, 2))  # Initialize an array to store the points
     for i in range(N):
@@ -53,7 +52,6 @@ def manhattan_distance(points, v):
     return distances
 
 
-# k-NN Regression algorithm
 # k-NN Regression algorithm
 def k_nn_regression(points, v, k, distance_metric="euclidean"):
     # Check if k is greater than the number of points
