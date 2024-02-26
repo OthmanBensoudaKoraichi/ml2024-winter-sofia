@@ -97,9 +97,6 @@ def main():
     else:
         print("Not enough data to calculate R^2.")
 
-    print(f"Predicted Y for input X={x_input}: {y_predict[0]}")
-    print(f"Coefficient of determination (R^2) based on the training data: {r2}")
-
 
 if __name__ == "__main__":
-    print(main())
+    main()
