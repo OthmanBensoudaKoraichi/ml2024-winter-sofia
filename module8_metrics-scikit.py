@@ -42,8 +42,8 @@ def main():
         while True:
             try:
                 y_input = input(f"Enter predicted value for point {i + 1}: ")
-                y[i] = float(y_input)  # Attempt to convert input to float
-                break  # Exit the loop if successful
+                y[i] = float(y_input)
+                break
             except ValueError:
                 print("Invalid input. Please enter a real number.")
 
